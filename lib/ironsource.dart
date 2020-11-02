@@ -45,7 +45,7 @@ class IronSource {
     });
   }
 
-  static Future<Null> showRewardedVideol([String placementName]) async {
+  static Future<Null> showRewardedVideo([String placementName]) async {
     await _channel.invokeMethod('showRewardedVideo', {
       "placementName": placementName,
     });
