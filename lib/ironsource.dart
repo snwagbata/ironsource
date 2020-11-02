@@ -40,15 +40,22 @@ class IronSource {
   }
 
   static Future<Null> showInterstitial([String placementName]) async {
-    await _channel.invokeMethod('showInterstitial', {"placementName": placementName});
+    await _channel.invokeMethod('showInterstitial', {
+      "placementName": placementName,
+    });
   }
 
   static Future<Null> showRewardedVideol([String placementName]) async {
-    await _channel.invokeMethod('showRewardedVideo', {"placementName": placementName});
+    await _channel.invokeMethod('showRewardedVideo', {
+      "placementName": placementName,
+    });
   }
 
-  static Future<Null> showOfferwall() async {
-    await _channel.invokeMethod('showOfferwall');
+  static Future<Null> showOfferwall([String placementName]) async {
+    await _channel.invokeMethod(
+      'showOfferwall',
+      {"placementName": placementName},
+    );
   }
 
   static Future<bool> isInterstitialReady() async {

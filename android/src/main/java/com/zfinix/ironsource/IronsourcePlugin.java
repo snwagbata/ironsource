@@ -76,7 +76,11 @@ public class IronsourcePlugin implements MethodCallHandler, InterstitialListener
         } else if (call.method.equals(IronSourceConsts.IS_OFFERWALL_AVAILABLE)) {
             result.success(IronSource.isOfferwallAvailable());
         } else if (call.method.equals(IronSourceConsts.SHOW_OFFERWALL)) {
-            IronSource.showOfferwall();
+            String placementName = call.argument("placementName");
+            if (placementName != null)
+                IronSource.showOfferwall(placementName);
+            else
+                IronSource.showOfferwall();
             result.success(null);
         } else if (call.method.equals(IronSourceConsts.SHOW_REWARDED_VIDEO)) {
             String placementName = call.argument("placementName");
